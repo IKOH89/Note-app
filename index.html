@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notes Application</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app">
+    <header class="app-header">
+      <h1>My Notes</h1>
+      <p class="note-count" id="noteCount">0 notes</p>
+    </header>
+
+```
+<div class="search-bar">
+  <input
+    type="text"
+    id="searchInput"
+    class="search-input"
+    placeholder="Search notes by title or keyword..."
+    autocomplete="off"
+  >
+</div>
+
+<form id="noteForm" class="note-form">
+  <input
+    type="text"
+    id="titleInput"
+    class="title-input"
+    placeholder="Note title"
+    autocomplete="off"
+  >
+  <textarea
+    id="bodyInput"
+    class="body-input"
+    placeholder="Write your note here..."
+    rows="4"
+  ></textarea>
+  <p id="errorMsg" class="error-msg"></p>
+  <button type="submit" class="save-btn">Save Note</button>
+</form>
+
+<div id="notesGrid" class="notes-grid"></div>
+
+<p id="emptyState" class="empty-state">No notes yet. Write one above to get started.</p>
+<p id="noResultsState" class="empty-state hidden">No notes match your search.</p>
+```
+
+  </div>
+
+  <!-- Edit Modal -->
+
+  <div id="editModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Edit Note</h2>
+      <input type="text" id="editTitleInput" class="title-input">
+      <textarea id="editBodyInput" class="body-input" rows="5"></textarea>
+      <p id="editErrorMsg" class="error-msg"></p>
+      <div class="modal-actions">
+        <button id="cancelEdit" class="btn-secondary">Cancel</button>
+        <button id="saveEdit" class="btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
